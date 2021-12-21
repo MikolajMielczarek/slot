@@ -18,12 +18,12 @@ class Wallet {
     } else if (type === "-") {
      return _money -= value;
     } else {
-     throw new Error("nieprawidłowy typ działania")
+     throw new Error("wrong type")
     }
 
    } else {
     console.log(typeof value);
-    throw new Error("nieprawdidłowa liczba")
+    throw new Error("wrong number")
    }
   }
 

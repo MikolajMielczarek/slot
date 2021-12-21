@@ -26,9 +26,9 @@ class Game {
 
   this.spanWallet.textContent = money;
   if (result) {
-   result = `Wygrałeś ${wonMoney}$. `;
+   result = `You won ${wonMoney}$. `;
   } else if (!result && result !== "") {
-   result = `Przegrałeś ${bid}$. `
+   result = `You have lost ${bid}$. `
   }
   this.spanResult.textContent = result;
   this.spanGames.textContent = stats[0];
@@ -39,11 +39,11 @@ class Game {
  }
 
  startGame() {
-  if (this.inputBid.value < 1) return alert('Kwota, którą chcesz grać jest za mała!')
+  if (this.inputBid.value < 1) return alert('The amount is too small to play!')
   const bid = Math.floor(this.inputBid.value);
 
   if (!this.wallet.checkCanPlay(bid)) {
-   return alert("masz za mało środków lub podana została nieprawidłowa wartość")
+   return alert("You have insufficient funds or the value is incorrect")
   }
 
   this.wallet.changeWallet(bid, '-');
